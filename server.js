@@ -57,7 +57,7 @@ app.post('/send-email', upload.single('pdf'), async (req, res) => {
     };
 
     const info = await transporter.sendMail(mailOptions);
-    console.log('Email sent:', info.messageId);
+    console.log('Email sent:');
     res.status(200).json({ message: 'Email sent successfully!' });
   } catch (error) {
     res.status(500).json({ error: 'Failed to send email..try again' });
